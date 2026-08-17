@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Plano Habitar Caçador</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <!-- Fontes para os ícones -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts -->
@@ -166,7 +167,7 @@
     <!-- DADOS OFICIAIS: IBGE (API PÚBLICA, AO VIVO) -->
     <section class="panorama" id="dados-ibge">
         <div class="panorama-header">
-            <span class="section-tag">DADOS ABERTOS</span>
+            <span class="ibge-live-badge"><span class="ibge-live-dot"></span> AO VIVO</span>
             <h2>CAÇADOR EM NÚMEROS</h2>
             <p>Dados oficiais, buscados automaticamente da API pública do IBGE no momento em que você abriu esta página.</p>
         </div>
@@ -174,26 +175,22 @@
         <p id="ibge-loading" class="ibge-status"><i class="fa-solid fa-spinner fa-spin"></i> Carregando dados do IBGE...</p>
         <p id="ibge-erro" class="ibge-status" hidden><i class="fa-solid fa-triangle-exclamation"></i> Não foi possível carregar os dados do IBGE agora. Tente novamente mais tarde.</p>
 
-        <div id="ibge-painel" class="cards-container" hidden>
-            <div class="card">
-                <div class="card-icon green"><i class="fa-solid fa-people-group"></i></div>
-                <h4>População Estimada (2025)</h4>
-                <p class="ibge-valor" id="ibge-pop-2025">—</p>
+        <div id="ibge-painel" class="ibge-painel" hidden>
+            <div class="ibge-stat">
+                <span class="ibge-stat-label"><i class="fa-solid fa-people-group"></i> População Estimada (2025)</span>
+                <span class="ibge-valor" id="ibge-pop-2025">—</span>
             </div>
-            <div class="card">
-                <div class="card-icon blue"><i class="fa-solid fa-arrow-trend-up"></i></div>
-                <h4>Crescimento desde o Censo 2022</h4>
-                <p class="ibge-valor" id="ibge-crescimento">—</p>
+            <div class="ibge-stat">
+                <span class="ibge-stat-label"><i class="fa-solid fa-arrow-trend-up"></i> Crescimento desde 2022</span>
+                <span class="ibge-valor" id="ibge-crescimento">—</span>
             </div>
-            <div class="card">
-                <div class="card-icon yellow"><i class="fa-solid fa-map"></i></div>
-                <h4>Área Territorial</h4>
-                <p class="ibge-valor" id="ibge-area">—</p>
+            <div class="ibge-stat">
+                <span class="ibge-stat-label"><i class="fa-solid fa-map"></i> Área Territorial</span>
+                <span class="ibge-valor" id="ibge-area">—</span>
             </div>
-            <div class="card">
-                <div class="card-icon dark-blue"><i class="fa-solid fa-layer-group"></i></div>
-                <h4>Densidade Demográfica</h4>
-                <p class="ibge-valor" id="ibge-densidade">—</p>
+            <div class="ibge-stat">
+                <span class="ibge-stat-label"><i class="fa-solid fa-layer-group"></i> Densidade Demográfica</span>
+                <span class="ibge-valor" id="ibge-densidade">—</span>
             </div>
         </div>
 

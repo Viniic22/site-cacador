@@ -47,7 +47,7 @@ function mostrarToast(mensagem, icone) {
 // SCROLL REVEAL (animação ao rolar a página)
 // ==========================================
 document.addEventListener('DOMContentLoaded', () => {
-    const revealSelectors = '.card, .stat-item, .cta-box, .trust-icons, .simulator-container, .link-card, .faq-item, .pilar-item, .panorama-header, .sobre-projeto-container, .compare-wrapper, .stepper, .timeline-item, .feature-row';
+    const revealSelectors = '.card, .stat-item, .cta-box, .trust-icons, .simulator-container, .link-card, .faq-item, .pilar-item, .panorama-header, .sobre-projeto-container, .compare-wrapper, .stepper, .timeline-item, .feature-row, .numbered-item, .ibge-painel';
     const revealEls = document.querySelectorAll(revealSelectors);
 
     if (!('IntersectionObserver' in window) || revealEls.length === 0) return;

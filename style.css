@@ -964,13 +964,75 @@ body.dark-mode .pilar-icon.yellow { background: rgba(202, 138, 4, 0.25); color: 
     padding: 30px 0;
 }
 
-.card .ibge-valor {
-    font-size: 22px;
+.ibge-live-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: var(--primary-green);
+    background: var(--bg-tag);
+    border: 1px solid var(--border-tag);
+    padding: 5px 14px;
+    border-radius: 20px;
+    margin-bottom: 14px;
+}
+
+.ibge-live-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--primary-green);
+    animation: geo-pulse 1.8s infinite;
+}
+
+.ibge-painel {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1100px;
+    margin: 0 auto;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+}
+
+.ibge-stat {
+    flex: 1 1 220px;
+    padding: 32px 28px;
+    border-right: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.ibge-stat:last-child { border-right: none; }
+
+.ibge-stat-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.ibge-stat-label i { color: var(--primary-green); font-size: 13px; }
+
+.ibge-valor {
+    font-size: 26px;
     font-weight: 800;
     color: var(--text-heading);
-    line-height: 1.3;
-    margin-bottom: 0;
-    flex-grow: 0;
+    line-height: 1.25;
+}
+
+@media (max-width: 768px) {
+    .ibge-stat { border-right: none; border-bottom: 1px solid var(--border-color); }
+    .ibge-stat:last-child { border-bottom: none; }
 }
 
 /* ==========================================
@@ -1099,6 +1161,53 @@ body.dark-mode #map .leaflet-tile-pane {
     padding-top: 24px;
     margin-top: 10px;
     border-top: 1px solid rgba(255,255,255,0.12);
+}
+
+/* ==========================================
+   LISTA NUMERADA (O QUE É O PLANO)
+========================================== */
+.numbered-list {
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.numbered-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 28px;
+    padding: 26px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.numbered-item:first-child { padding-top: 0; }
+.numbered-item:last-child { border-bottom: none; padding-bottom: 0; }
+
+.numbered-digit {
+    font-size: 42px;
+    font-weight: 800;
+    color: var(--primary-green);
+    opacity: 0.35;
+    line-height: 1;
+    min-width: 64px;
+    flex-shrink: 0;
+}
+
+.numbered-content h4 {
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--text-heading);
+    margin-bottom: 8px;
+}
+
+.numbered-content p {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+@media (max-width: 640px) {
+    .numbered-item { gap: 18px; }
+    .numbered-digit { font-size: 32px; min-width: 46px; }
 }
 
 /* ==========================================
