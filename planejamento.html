@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planejamento - Plano Habitar Caçador</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome para Ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- VLibras: widget oficial do Governo Federal (Libras) -->
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app/');
+    </script>
+
+    <!-- CABEÇALHO / NAVBAR -->
+    <header class="navbar">
+        <div class="logo-container">
+            <a href="index.html" class="logo-brand">
+                <img src="brasaocacador.jpg" alt="Brasão do Município de Caçador" class="logo-brasao">
+                <div class="logo-text">
+                    <h1>PLANO<span>HABITAR</span><strong>CAÇADOR</strong></h1>
+                </div>
+            </a>
+            <div class="logo-slogan">
+                Moradia digna<br>para uma cidade<br>mais próspera.
+            </div>
+        </div>
+
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="sobre_o_projeto.html">Sobre o Projeto</a>
+            <a href="servicos.html">Serviços</a>
+            <a href="planejamento.html" class="active">Planejamento</a>
+            <a href="guia_do_cidadao.html">Guia do Cidadão</a>
+        </nav>
+
+        <div class="header-actions">
+            <button id="theme-toggle" class="btn-theme-toggle" aria-label="Alternar Tema Claro/Escuro" title="Alternar Modo Escuro">
+                <i id="theme-icon" class="fa-solid fa-moon"></i>
+            </button>
+            <a href="index.html#pesquisa" class="btn btn-green"><i class="fa-regular fa-user"></i> PARTICIPE</a>
+        </div>
+    </header>
+
+    <!-- INTRODUÇÃO AO PLANEJAMENTO -->
+    <section class="sobre-projeto-section">
+        <div class="sobre-projeto-container">
+            <div class="sobre-badge">
+                <i class="fa-solid fa-compass-drafting"></i> COMO FUNCIONA
+            </div>
+
+            <h1 class="sobre-titulo">
+                PLANEJAMENTO DO <span class="destaque-plano">PLANO HABITAR</span>
+            </h1>
+
+            <p class="sobre-descricao">
+                O planejamento do Plano Habitar Caçador segue um processo técnico e participativo, dividido em etapas claras, com metas de curto, médio e longo prazo para transformar o diagnóstico habitacional em resultados concretos para a cidade.
+            </p>
+        </div>
+    </section>
+
+    <!-- ETAPAS DO PLANEJAMENTO -->
+    <section class="panorama">
+        <div class="panorama-header">
+            <span class="section-tag">CRONOGRAMA</span>
+            <h2>ETAPAS DE DESENVOLVIMENTO DO PLANO</h2>
+            <p>Conheça os passos que estão sendo seguidos para transformar o diagnóstico habitacional em melhorias reais para a cidade.</p>
+        </div>
+
+        <!-- Atualize as classes "completed" / "active" conforme o andamento real do projeto -->
+        <div class="stepper">
+            <div class="step completed">
+                <div class="step-circle"><i class="fa-solid fa-check"></i></div>
+                <span>Diagnóstico Local</span>
+            </div>
+            <div class="step-line completed"></div>
+            <div class="step active">
+                <div class="step-circle">2</div>
+                <span>Escuta Comunitária</span>
+            </div>
+            <div class="step-line"></div>
+            <div class="step">
+                <div class="step-circle">3</div>
+                <span>Diretrizes e Metas</span>
+            </div>
+            <div class="step-line"></div>
+            <div class="step">
+                <div class="step-circle">4</div>
+                <span>Execução e Monitoramento</span>
+            </div>
+        </div>
+        <p class="stepper-caption">Etapa atual: <strong>Escuta Comunitária</strong> — estamos coletando respostas da pesquisa de demanda habitacional junto à população.</p>
+
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-marker dark-blue"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+                <div class="timeline-content">
+                    <h4>1. Diagnóstico Local</h4>
+                    <p>Levantamento detalhado do déficit habitacional, custos de aluguel, áreas irregulares e perfil demográfico da população.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-marker green"><i class="fa-solid fa-comments"></i></div>
+                <div class="timeline-content">
+                    <h4>2. Escuta Comunitária</h4>
+                    <p>Realização de pesquisas, consultas públicas e audiências com os cidadãos, estudantes e setor industrial de Caçador.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-marker yellow"><i class="fa-solid fa-sliders"></i></div>
+                <div class="timeline-content">
+                    <h4>3. Diretrizes e Metas</h4>
+                    <p>Elaboração de propostas prioritárias e metas de curto, médio e longo prazo para a construção e regularização de imóveis.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-marker blue"><i class="fa-solid fa-gears"></i></div>
+                <div class="timeline-content">
+                    <h4>4. Execução e Monitoramento</h4>
+                    <p>Implementação dos programas habitacionais com acompanhamento contínuo dos resultados e transparência pública.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- METAS POR PRAZO -->
+    <section class="panorama" style="background-color: var(--bg-section-alt);">
+        <div class="panorama-header">
+            <span class="section-tag">METAS</span>
+            <h2>PRIORIDADES DE CURTO, MÉDIO E LONGO PRAZO</h2>
+            <p>As ações do plano estão organizadas em horizontes de tempo para garantir avanços contínuos e mensuráveis.</p>
+        </div>
+
+        <div class="cards-container" style="grid-template-columns: repeat(3, 1fr);">
+            <div class="card">
+                <div class="card-icon green"><i class="fa-solid fa-flag"></i></div>
+                <h4>Curto Prazo</h4>
+                <p>Conclusão do diagnóstico habitacional, escuta comunitária e mapeamento das áreas urbanas irregulares.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon blue"><i class="fa-solid fa-timeline"></i></div>
+                <h4>Médio Prazo</h4>
+                <p>Início da regularização fundiária, formação de parcerias com indústrias e construtoras, e projetos-piloto de moradia acessível.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon dark-blue"><i class="fa-solid fa-city"></i></div>
+                <h4>Longo Prazo</h4>
+                <p>Redução consistente do déficit habitacional e consolidação de uma oferta permanente de moradia digna para todos os públicos.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CALL TO ACTION -->
+    <section class="cta-section" style="padding-bottom: 80px;">
+        <div class="cta-box">
+            <div class="cta-icon">
+                <i class="fa-solid fa-bullhorn"></i>
+            </div>
+            <div class="cta-content">
+                <h2>Sua opinião constrói este plano!</h2>
+                <p>Responda à nossa pesquisa habitacional e ajude a gestão pública a mapear as reais necessidades da população caçadorense.</p>
+            </div>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSewV85OoJQ3cArlmn6vn6lVAgEoa7BUQ8nGz9EV23yz-bv1gg/viewform?usp=publish-editor" target="_blank" class="btn btn-yellow-dark">RESPONDER PESQUISA &rarr;</a>
+        </div>
+    </section>
+
+    <!-- RODAPÉ -->
+    <footer>
+        <div class="footer-logo">
+            <a href="index.html" class="footer-brand">
+                <img src="brasaocacador.jpg" alt="Brasão do Município de Caçador" class="logo-brasao">
+                <div class="logo-text">
+                    <h2>PLANO<span>HABITAR</span><strong>CAÇADOR</strong></h2>
+                </div>
+            </a>
+            <div class="footer-slogan">
+                Moradia digna é um direito.<br>
+                Juntos, podemos tornar Caçador<br>
+                uma cidade para todos.
+            </div>
+        </div>
+
+        <div class="footer-social">
+            <p>Siga-nos nas redes sociais</p>
+            <div class="social-icons">
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                <a href="#"><i class="fa-regular fa-envelope"></i></a>
+            </div>
+        </div>
+
+        <div class="footer-location">
+            <strong>Caçador, SC</strong><br>
+            Terra de oportunidades.<br>
+            Cidade de, para e por pessoas.
+        </div>
+
+        <div class="footer-credit">
+            Plano Habitar Caçador &mdash; Desenvolvido por Rafael Matheus Leismann e Vinicius Corrêa
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="scripts.js"></script>
+</body>
+</html>

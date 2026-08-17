@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre o Projeto - Plano Habitar Caçador</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome para Ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- VLibras: widget oficial do Governo Federal (Libras) -->
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app/');
+    </script>
+
+    <!-- CABEÇALHO / NAVBAR -->
+    <header class="navbar">
+        <div class="logo-container">
+            <a href="index.html" class="logo-brand">
+                <img src="brasaocacador.jpg" alt="Brasão do Município de Caçador" class="logo-brasao">
+                <div class="logo-text">
+                    <h1>PLANO<span>HABITAR</span><strong>CAÇADOR</strong></h1>
+                </div>
+            </a>
+            <div class="logo-slogan">
+                Moradia digna<br>para uma cidade<br>mais próspera.
+            </div>
+        </div>
+
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="sobre_o_projeto.html" class="active">Sobre o Projeto</a>
+            <a href="servicos.html">Serviços</a>
+            <a href="planejamento.html">Planejamento</a>
+            <a href="guia_do_cidadao.html">Guia do Cidadão</a>
+        </nav>
+
+        <div class="header-actions">
+            <button id="theme-toggle" class="btn-theme-toggle" aria-label="Alternar Tema Claro/Escuro" title="Alternar Modo Escuro">
+                <i id="theme-icon" class="fa-solid fa-moon"></i>
+            </button>
+            <a href="index.html#pesquisa" class="btn btn-green"><i class="fa-regular fa-user"></i> PARTICIPE</a>
+        </div>
+    </header>
+
+    <!-- ==========================================
+         NOVA SEÇÃO: SOBRE O PROJETO (SEM IMAGEM DE FUNDO)
+    ========================================== -->
+    <section class="sobre-projeto-section">
+        <div class="sobre-projeto-container">
+            <div class="sobre-badge">
+                <i class="fa-solid fa-shield-halved"></i> TRANSPARÊNCIA E PLANEJAMENTO
+            </div>
+
+            <h1 class="sobre-titulo">
+                SOBRE O <span class="destaque-plano">PLANO HABITAR</span>
+            </h1>
+
+            <p class="sobre-descricao">
+                Uma iniciativa estratégica para diagnosticar, planejar e implementar soluções de moradia digna, sustentável e acessível para toda a população caçadorense.
+            </p>
+
+            <div class="sobre-pilares">
+                <div class="pilar-item">
+                    <div class="pilar-icon green"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+                    <div>
+                        <strong>Diagnóstico</strong>
+                        <span>Mapeamento da habitação</span>
+                    </div>
+                </div>
+                <div class="pilar-item">
+                    <div class="pilar-icon blue"><i class="fa-solid fa-compass-drafting"></i></div>
+                    <div>
+                        <strong>Planejamento</strong>
+                        <span>Ações de curto e longo prazo</span>
+                    </div>
+                </div>
+                <div class="pilar-item">
+                    <div class="pilar-icon yellow"><i class="fa-solid fa-house-chimney-user"></i></div>
+                    <div>
+                        <strong>Moradia Digna</strong>
+                        <span>Acessível e sustentável</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- O QUE É O PROJETO -->
+    <section class="panorama">
+        <div class="panorama-header">
+            <span class="section-tag">CONHEÇA A INICIATIVA</span>
+            <h2>O QUE É O PLANO HABITAR CAÇADOR?</h2>
+            <p>O Plano Habitar Caçador é o instrumento técnico e participativo que orienta as políticas públicas de habitação de interesse social no município, integrando planejamento urbano, inclusão social e desenvolvimento econômico.</p>
+        </div>
+
+        <!-- PILARES PRINCIPAIS -->
+        <div class="cards-container">
+            <div class="card">
+                <div class="card-icon green"><i class="fa-solid fa-house-user"></i></div>
+                <h4>Moradia Digna</h4>
+                <p>Garantir que as famílias de Caçador tenham acesso a moradias seguras, com saneamento básico, energia e infraestrutura urbana adequada.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon blue"><i class="fa-solid fa-file-signature"></i></div>
+                <h4>Regularização Fundiária</h4>
+                <p>Legalizar áreas urbanas consolidadas, concedendo aos moradores a escritura definitiva de seus imóveis e segurança jurídica.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon yellow"><i class="fa-solid fa-coins"></i></div>
+                <h4>Acessibilidade Financeira</h4>
+                <p>Fomentar parcerias e modelos de financiamento que reduzam o impacto do aluguel na renda familiar dos trabalhadores e estudantes.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon dark-blue"><i class="fa-solid fa-city"></i></div>
+                <h4>Crescimento Ordenado</h4>
+                <p>Direcionar a expansão habitacional da cidade de forma sustentável, alinhada às necessidades do setor produtivo e das indústrias locais.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- TEASER: PLANEJAMENTO -->
+    <section class="simulator-section">
+        <div class="simulator-container" style="border-left-color: #0A2B4C;">
+            <div class="simulator-text">
+                <h2>Quer saber como isso vai acontecer?</h2>
+                <p>Conheça o cronograma completo de execução do plano, com as etapas de diagnóstico, escuta comunitária, diretrizes e metas de curto, médio e longo prazo.</p>
+            </div>
+            <a href="planejamento.html" class="btn btn-blue" style="margin: 0 auto;">VER PLANEJAMENTO COMPLETO &rarr;</a>
+        </div>
+    </section>
+
+    <!-- PÚBLICO-ALVO -->
+    <section class="panorama">
+        <div class="panorama-header">
+            <span class="section-tag">A QUEM SE DESTINA</span>
+            <h2>QUEM É BENEFICIADO PELO PLANO?</h2>
+            <p>O plano foi desenhado para atender diferentes realidades do nosso município.</p>
+        </div>
+
+        <div class="stats-panel-horizontal" style="background: linear-gradient(135deg, #1E293B, #0F172A);">
+            <div class="stat-item">
+                <div class="stat-header">
+                    <i class="fa-solid fa-people-roof stat-icon"></i>
+                    <span class="stat-value">Famílias</span>
+                </div>
+                <p class="stat-desc">Em busca do sonho da casa própria ou regularização do seu lote</p>
+            </div>
+
+            <div class="stat-divider"></div>
+
+            <div class="stat-item">
+                <div class="stat-header">
+                    <i class="fa-solid fa-briefcase stat-icon"></i>
+                    <span class="stat-value">Trabalhadores</span>
+                </div>
+                <p class="stat-desc">Que necessitam de aluguel acessível e próximo ao trabalho</p>
+            </div>
+
+            <div class="stat-divider"></div>
+
+            <div class="stat-item">
+                <div class="stat-header">
+                    <i class="fa-solid fa-graduation-cap stat-icon"></i>
+                    <span class="stat-value">Estudantes</span>
+                </div>
+                <p class="stat-desc">Que se mudam para Caçador e precisam de moradia estudantil viável</p>
+            </div>
+
+            <div class="stat-divider"></div>
+
+            <div class="stat-item">
+                <div class="stat-header">
+                    <i class="fa-solid fa-industry stat-icon"></i>
+                    <span class="stat-value">Indústrias</span>
+                </div>
+                <p class="stat-desc">Favorecidas pela atração e fixação de mão de obra na cidade</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CALL TO ACTION -->
+    <section class="cta-section">
+        <div class="cta-box">
+            <div class="cta-icon">
+                <i class="fa-solid fa-bullhorn"></i>
+            </div>
+            <div class="cta-content">
+                <h2>Sua opinião constrói este plano!</h2>
+                <p>Responda à nossa pesquisa habitacional e ajude a gestão pública a mapear as reais necessidades da população caçadorense.</p>
+            </div>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSewV85OoJQ3cArlmn6vn6lVAgEoa7BUQ8nGz9EV23yz-bv1gg/viewform?usp=publish-editor" target="_blank" class="btn btn-yellow-dark">RESPONDER PESQUISA &rarr;</a>
+        </div>
+    </section>
+
+    <!-- RODAPÉ -->
+    <footer>
+        <div class="footer-logo">
+            <a href="index.html" class="footer-brand">
+                <img src="brasaocacador.jpg" alt="Brasão do Município de Caçador" class="logo-brasao">
+                <div class="logo-text">
+                    <h2>PLANO<span>HABITAR</span><strong>CAÇADOR</strong></h2>
+                </div>
+            </a>
+            <div class="footer-slogan">
+                Moradia digna é um direito.<br>
+                Juntos, podemos tornar Caçador<br>
+                uma cidade para todos.
+            </div>
+        </div>
+
+        <div class="footer-social">
+            <p>Siga-nos nas redes sociais</p>
+            <div class="social-icons">
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                <a href="#"><i class="fa-regular fa-envelope"></i></a>
+            </div>
+        </div>
+
+        <div class="footer-location">
+            <strong>Caçador, SC</strong><br>
+            Terra de oportunidades.<br>
+            Cidade de, para e por pessoas.
+        </div>
+
+        <div class="footer-credit">
+            Plano Habitar Caçador &mdash; Desenvolvido por Rafael Matheus Leismann e Vinicius Corrêa
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="scripts.js"></script>
+</body>
+</html>

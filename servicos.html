@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serviços - Plano Habitar Caçador</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome para Ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- VLibras: widget oficial do Governo Federal (Libras) -->
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app/');
+    </script>
+
+    <!-- CABEÇALHO / NAVBAR -->
+    <header class="navbar">
+        <div class="logo-container">
+            <a href="index.html" class="logo-brand">
+                <img src="brasaocacador.jpg" alt="Brasão do Município de Caçador" class="logo-brasao">
+                <div class="logo-text">
+                    <h1>PLANO<span>HABITAR</span><strong>CAÇADOR</strong></h1>
+                </div>
+            </a>
+            <div class="logo-slogan">
+                Moradia digna<br>para uma cidade<br>mais próspera.
+            </div>
+        </div>
+
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="sobre_o_projeto.html">Sobre o Projeto</a>
+            <a href="servicos.html" class="active">Serviços</a>
+            <a href="planejamento.html">Planejamento</a>
+            <a href="guia_do_cidadao.html">Guia do Cidadão</a>
+        </nav>
+
+        <div class="header-actions">
+            <button id="theme-toggle" class="btn-theme-toggle" aria-label="Alternar Tema Claro/Escuro" title="Alternar Modo Escuro">
+                <i id="theme-icon" class="fa-solid fa-moon"></i>
+            </button>
+            <a href="index.html#pesquisa" class="btn btn-green"><i class="fa-regular fa-user"></i> PARTICIPE</a>
+        </div>
+    </header>
+
+    <!-- INTRODUÇÃO AOS SERVIÇOS -->
+    <section class="sobre-projeto-section">
+        <div class="sobre-projeto-container">
+            <div class="sobre-badge">
+                <i class="fa-solid fa-trowel-bricks"></i> SOLUÇÕES ACESSÍVEIS
+            </div>
+
+            <h1 class="sobre-titulo">
+                GALERIA DE <span class="destaque-plano">SOLUÇÕES CONSTRUTIVAS</span>
+            </h1>
+
+            <p class="sobre-descricao">
+                Conheça modelos construtivos de referência que reduzem custo e prazo de obra, tornando a moradia digna mais acessível para famílias, trabalhadores e estudantes de Caçador.
+            </p>
+        </div>
+    </section>
+
+    <!-- GALERIA DE MODELOS -->
+    <section class="panorama">
+        <div class="panorama-header">
+            <span class="section-tag">MODELOS DE REFERÊNCIA</span>
+            <h2>ALTERNATIVAS CONSTRUTIVAS ACESSÍVEIS</h2>
+            <p>Tecnologias construtivas que podem ser adotadas em programas habitacionais e por famílias que buscam reduzir o custo final da moradia.</p>
+        </div>
+
+        <div class="feature-rows">
+            <div class="feature-row">
+                <div class="feature-visual green"><i class="fa-solid fa-tree"></i></div>
+                <div class="feature-text">
+                    <span class="card-tag">Prazo reduzido</span>
+                    <h3>Madeira Engenheirada (CLT)</h3>
+                    <p>Estrutura em painéis de madeira laminada cruzada. Construção rápida, isolamento térmico eficiente e menor impacto ambiental.</p>
+                </div>
+            </div>
+            <div class="feature-row reverse">
+                <div class="feature-visual blue"><i class="fa-solid fa-industry"></i></div>
+                <div class="feature-text">
+                    <span class="card-tag">Custo previsível</span>
+                    <h3>Steel Frame</h3>
+                    <p>Estrutura metálica leve associada a fechamentos industrializados. Boa relação custo-benefício e alta precisão construtiva.</p>
+                </div>
+            </div>
+            <div class="feature-row">
+                <div class="feature-visual yellow"><i class="fa-solid fa-cubes"></i></div>
+                <div class="feature-text">
+                    <span class="card-tag">Baixo desperdício</span>
+                    <h3>Habitação Modular Popular</h3>
+                    <p>Unidades pré-fabricadas montadas no terreno, reduzindo desperdício de material e tempo de obra em relação à alvenaria convencional.</p>
+                </div>
+            </div>
+            <div class="feature-row reverse">
+                <div class="feature-visual dark-blue"><i class="fa-solid fa-layer-group"></i></div>
+                <div class="feature-text">
+                    <span class="card-tag">Durabilidade</span>
+                    <h3>Alvenaria Estrutural Otimizada</h3>
+                    <p>Sistema tradicional revisado para reduzir etapas de acabamento, mantendo durabilidade e acessibilidade de custo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COMPARADOR: TRADICIONAL x SOLUÇÃO ACESSÍVEL -->
+    <section class="panorama">
+        <div class="panorama-header">
+            <span class="section-tag">ARRASTE PARA COMPARAR</span>
+            <h2>CONSTRUÇÃO TRADICIONAL x SOLUÇÃO ACESSÍVEL</h2>
+            <p>Arraste o controle para comparar, de forma qualitativa, as características entre o método construtivo convencional e as soluções acessíveis apresentadas acima.</p>
+        </div>
+
+        <div class="compare-wrapper">
+            <div class="compare-slider">
+                <div class="compare-panel tradicional">
+                    <h4>Construção Tradicional</h4>
+                    <ul>
+                        <li><i class="fa-solid fa-clock"></i><span>Prazo de obra mais longo</span></li>
+                        <li><i class="fa-solid fa-people-carry-box"></i><span>Depende de mais mão de obra especializada</span></li>
+                        <li><i class="fa-solid fa-trash"></i><span>Maior geração de resíduos de obra</span></li>
+                        <li><i class="fa-solid fa-cloud-rain"></i><span>Processo mais sensível a intempéries</span></li>
+                    </ul>
+                </div>
+                <div class="compare-panel acessivel" id="compare-acessivel">
+                    <h4>Solução Acessível</h4>
+                    <ul>
+                        <li><i class="fa-solid fa-bolt"></i><span>Obra tende a ser mais rápida</span></li>
+                        <li><i class="fa-solid fa-recycle"></i><span>Menor desperdício de material</span></li>
+                        <li><i class="fa-solid fa-temperature-half"></i><span>Melhor isolamento térmico</span></li>
+                        <li><i class="fa-solid fa-industry"></i><span>Processo industrializado e padronizado</span></li>
+                    </ul>
+                </div>
+                <div class="compare-handle" id="compare-handle" style="left: 50%;">
+                    <div class="compare-handle-grip"><i class="fa-solid fa-left-right"></i></div>
+                </div>
+                <input type="range" min="0" max="100" value="50" id="compare-range" class="compare-range" aria-label="Comparar construção tradicional com solução acessível">
+            </div>
+            <p class="compare-caption">Comparação qualitativa entre métodos construtivos, sem valores fixos de custo — o orçamento final varia conforme projeto, fornecedor e condições locais. Consulte uma construtora parceira para um orçamento real.</p>
+        </div>
+    </section>
+
+    <!-- INDÚSTRIAS E CONSTRUTORAS PARCEIRAS -->
+    <section class="panorama" style="background-color: var(--bg-section-alt);">
+        <div class="panorama-header">
+            <span class="section-tag">REDE LOCAL</span>
+            <h2>INDÚSTRIAS E CONSTRUTORAS PARCEIRAS</h2>
+            <p>O Plano Habitar Caçador está construindo uma rede de parceiros locais para viabilizar essas soluções na prática.</p>
+        </div>
+
+        <div class="simulator-container" style="max-width: 850px;">
+            <div class="simulator-text" style="flex: 2;">
+                <h2>Sua empresa quer fazer parte?</h2>
+                <p>Indústrias madeireiras, metalúrgicas e construtoras de Caçador interessadas em apoiar soluções habitacionais acessíveis podem manifestar interesse através do nosso canal oficial de participação.</p>
+            </div>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSewV85OoJQ3cArlmn6vn6lVAgEoa7BUQ8nGz9EV23yz-bv1gg/viewform?usp=publish-editor" target="_blank" class="btn btn-green" style="flex: 1; justify-content: center;">QUERO SER PARCEIRO &rarr;</a>
+        </div>
+    </section>
+
+    <!-- CALL TO ACTION -->
+    <section class="cta-section" style="padding-bottom: 80px;">
+        <div class="cta-box">
+            <div class="cta-icon">
+                <i class="fa-solid fa-bullhorn"></i>
+            </div>
+            <div class="cta-content">
+                <h2>Sua opinião constrói este plano!</h2>
+                <p>Responda à nossa pesquisa habitacional e ajude a gestão pública a mapear as reais necessidades da população caçadorense.</p>
+            </div>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSewV85OoJQ3cArlmn6vn6lVAgEoa7BUQ8nGz9EV23yz-bv1gg/viewform?usp=publish-editor" target="_blank" class="btn btn-yellow-dark">RESPONDER PESQUISA &rarr;</a>
+        </div>
+    </section>
+
+    <!-- RODAPÉ -->
+    <footer>
+        <div class="footer-logo">
+            <a href="index.html" class="footer-brand">
+                <img src="brasaocacador.jpg" alt="Brasão do Município de Caçador" class="logo-brasao">
+                <div class="logo-text">
+                    <h2>PLANO<span>HABITAR</span><strong>CAÇADOR</strong></h2>
+                </div>
+            </a>
+            <div class="footer-slogan">
+                Moradia digna é um direito.<br>
+                Juntos, podemos tornar Caçador<br>
+                uma cidade para todos.
+            </div>
+        </div>
+
+        <div class="footer-social">
+            <p>Siga-nos nas redes sociais</p>
+            <div class="social-icons">
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                <a href="#"><i class="fa-regular fa-envelope"></i></a>
+            </div>
+        </div>
+
+        <div class="footer-location">
+            <strong>Caçador, SC</strong><br>
+            Terra de oportunidades.<br>
+            Cidade de, para e por pessoas.
+        </div>
+
+        <div class="footer-credit">
+            Plano Habitar Caçador &mdash; Desenvolvido por Rafael Matheus Leismann e Vinicius Corrêa
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="scripts.js"></script>
+    <script>
+        // Comparador interativo: Construção Tradicional x Solução Acessível
+        const compareRange = document.getElementById('compare-range');
+        const comparePanel = document.getElementById('compare-acessivel');
+        const compareHandle = document.getElementById('compare-handle');
+
+        if (compareRange && comparePanel && compareHandle) {
+            compareRange.addEventListener('input', () => {
+                const valor = Number(compareRange.value);
+                comparePanel.style.clipPath = `inset(0 ${100 - valor}% 0 0)`;
+                compareHandle.style.left = valor + '%';
+            });
+        }
+    </script>
+</body>
+</html>

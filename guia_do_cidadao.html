@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia do Cidadão - Plano Habitar Caçador</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome para Ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- VLibras: widget oficial do Governo Federal (Libras) -->
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app/');
+    </script>
+
+    <!-- CABEÇALHO / NAVBAR -->
+    <header class="navbar">
+        <div class="logo-container">
+            <a href="index.html" class="logo-brand">
+                <img src="brasaocacador.jpg" alt="Brasão do Município de Caçador" class="logo-brasao">
+                <div class="logo-text">
+                    <h1>PLANO<span>HABITAR</span><strong>CAÇADOR</strong></h1>
+                </div>
+            </a>
+            <div class="logo-slogan">
+                Moradia digna<br>para uma cidade<br>mais próspera.
+            </div>
+        </div>
+
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="sobre_o_projeto.html">Sobre o Projeto</a>
+            <a href="servicos.html">Serviços</a>
+            <a href="planejamento.html">Planejamento</a>
+            <a href="guia_do_cidadao.html" class="active">Guia do Cidadão</a>
+        </nav>
+
+        <div class="header-actions">
+            <button id="theme-toggle" class="btn-theme-toggle" aria-label="Alternar Tema Claro/Escuro" title="Alternar Modo Escuro">
+                <i id="theme-icon" class="fa-solid fa-moon"></i>
+            </button>
+            <a href="index.html#pesquisa" class="btn btn-green"><i class="fa-regular fa-user"></i> PARTICIPE</a>
+        </div>
+    </header>
+
+    <!-- INTRODUÇÃO AO GUIA -->
+    <section class="sobre-projeto-section">
+        <div class="sobre-projeto-container">
+            <div class="sobre-badge">
+                <i class="fa-solid fa-scale-balanced"></i> DIREITOS E INFORMAÇÕES
+            </div>
+
+            <h1 class="sobre-titulo">
+                GUIA DO <span class="destaque-plano">CIDADÃO</span>
+            </h1>
+
+            <p class="sobre-descricao">
+                Tire dúvidas frequentes sobre direitos do inquilino e acesse links úteis para órgãos e serviços oficiais relacionados à moradia em Caçador.
+            </p>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="panorama">
+        <div class="panorama-header">
+            <span class="section-tag">PERGUNTAS FREQUENTES</span>
+            <h2>DIREITOS DO INQUILINO</h2>
+            <p>Dúvidas comuns de quem aluga um imóvel em Caçador.</p>
+        </div>
+
+        <div class="faq-list">
+            <details class="faq-item">
+                <summary>Quais são os direitos básicos do inquilino?</summary>
+                <p>O inquilino tem direito a receber o imóvel em condições de uso, obter recibo de todos os pagamentos feitos, ser informado com antecedência sobre o fim do contrato e reaver o valor da caução ao término da locação, caso não haja dívidas ou danos ao imóvel.</p>
+            </details>
+            <details class="faq-item">
+                <summary>Como funciona o reajuste do valor do aluguel?</summary>
+                <p>O reajuste costuma ocorrer uma vez por ano, seguindo o índice definido em contrato (como IGP-M ou IPCA). O valor não pode ser alterado fora desse prazo ou índice combinado, salvo acordo entre as partes.</p>
+            </details>
+            <details class="faq-item">
+                <summary>O locador pode reter a caução (depósito) ao final do contrato?</summary>
+                <p>Somente em caso de dívidas pendentes (aluguel, condomínio, contas) ou danos comprovados ao imóvel que não sejam desgaste natural de uso. Caso contrário, o valor deve ser devolvido integralmente ao inquilino.</p>
+            </details>
+            <details class="faq-item">
+                <summary>O que fazer diante de um risco de despejo?</summary>
+                <p>Busque orientação o quanto antes junto à Defensoria Pública, ao Procon ou a um advogado. Muitas situações podem ser negociadas diretamente com o locador antes de chegar a uma ação judicial.</p>
+            </details>
+            <details class="faq-item">
+                <summary>Existe assistência jurídica gratuita em Caçador?</summary>
+                <p>Sim. A Defensoria Pública e núcleos de prática jurídica de instituições de ensino da região oferecem orientação gratuita para questões relacionadas à locação de imóveis.</p>
+            </details>
+        </div>
+
+        <p class="faq-disclaimer">
+            Este conteúdo tem caráter informativo e não substitui orientação jurídica profissional. Para casos específicos, procure a Defensoria Pública ou um advogado.
+        </p>
+    </section>
+
+    <!-- LINKS ÚTEIS -->
+    <section class="panorama" style="background-color: var(--bg-section-alt);">
+        <div class="panorama-header">
+            <span class="section-tag">CANAIS OFICIAIS</span>
+            <h2>LINKS ÚTEIS</h2>
+            <p>Acesse diretamente os portais oficiais para mais informações e serviços.</p>
+        </div>
+
+        <div class="links-uteis-grid">
+            <a href="https://cacador.sc.gov.br/" target="_blank" rel="noopener noreferrer" class="link-card">
+                <div class="link-icon"><i class="fa-solid fa-landmark"></i></div>
+                <div class="link-text">
+                    <strong>Prefeitura de Caçador</strong>
+                    <span>Portal oficial do município</span>
+                </div>
+                <i class="fa-solid fa-arrow-up-right-from-square link-arrow"></i>
+            </a>
+            <a href="https://www.caixa.gov.br/simule-habitacao" target="_blank" rel="noopener noreferrer" class="link-card">
+                <div class="link-icon"><i class="fa-solid fa-calculator"></i></div>
+                <div class="link-text">
+                    <strong>Simulador Habitacional CAIXA</strong>
+                    <span>Simulação de financiamento do Governo Federal</span>
+                </div>
+                <i class="fa-solid fa-arrow-up-right-from-square link-arrow"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- CALL TO ACTION -->
+    <section class="cta-section" style="padding-bottom: 80px;">
+        <div class="cta-box">
+            <div class="cta-icon">
+                <i class="fa-solid fa-bullhorn"></i>
+            </div>
+            <div class="cta-content">
+                <h2>Sua opinião constrói este plano!</h2>
+                <p>Responda à nossa pesquisa habitacional e ajude a gestão pública a mapear as reais necessidades da população caçadorense.</p>
+            </div>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSewV85OoJQ3cArlmn6vn6lVAgEoa7BUQ8nGz9EV23yz-bv1gg/viewform?usp=publish-editor" target="_blank" class="btn btn-yellow-dark">RESPONDER PESQUISA &rarr;</a>
+        </div>
+    </section>
+
+    <!-- RODAPÉ -->
+    <footer>
+        <div class="footer-logo">
+            <a href="index.html" class="footer-brand">
+                <img src="brasaocacador.jpg" alt="Brasão do Município de Caçador" class="logo-brasao">
+                <div class="logo-text">
+                    <h2>PLANO<span>HABITAR</span><strong>CAÇADOR</strong></h2>
+                </div>
+            </a>
+            <div class="footer-slogan">
+                Moradia digna é um direito.<br>
+                Juntos, podemos tornar Caçador<br>
+                uma cidade para todos.
+            </div>
+        </div>
+
+        <div class="footer-social">
+            <p>Siga-nos nas redes sociais</p>
+            <div class="social-icons">
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                <a href="#"><i class="fa-regular fa-envelope"></i></a>
+            </div>
+        </div>
+
+        <div class="footer-location">
+            <strong>Caçador, SC</strong><br>
+            Terra de oportunidades.<br>
+            Cidade de, para e por pessoas.
+        </div>
+
+        <div class="footer-credit">
+            Plano Habitar Caçador &mdash; Desenvolvido por Rafael Matheus Leismann e Vinicius Corrêa
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="scripts.js"></script>
+</body>
+</html>

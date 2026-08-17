@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plano Habitar Caçador</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Fontes para os ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Leaflet (Mapa Interativo) -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+</head>
+<body>
+
+    <!-- VLibras: widget oficial do Governo Federal (Libras) -->
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app/');
+    </script>
+
+    <!-- CABEÇALHO -->
+    <header class="navbar">
+        <div class="logo-container">
+            <a href="index.html" class="logo-brand">
+                <img src="brasaocacador.jpg" alt="Brasão do Município de Caçador" class="logo-brasao">
+                <div class="logo-text">
+                    <h1>PLANO<span>HABITAR</span><strong>CAÇADOR</strong></h1>
+                </div>
+            </a>
+            <div class="logo-slogan">
+                Moradia digna<br>para uma cidade<br>mais próspera.
+            </div>
+        </div>
+
+        <nav class="nav-links">
+            <a href="index.html" class="active">Home</a>
+            <a href="sobre_o_projeto.html">Sobre o Projeto</a>
+            <a href="servicos.html">Serviços</a>
+            <a href="planejamento.html">Planejamento</a>
+            <a href="guia_do_cidadao.html">Guia do Cidadão</a>
+        </nav>
+
+        <!-- AÇÕES DO CABEÇALHO: BOTÃO TEMA + BOTÃO PARTICIPE -->
+        <div class="header-actions">
+            <button id="theme-toggle" class="btn-theme-toggle" aria-label="Alternar Tema Claro/Escuro" title="Alternar Modo Escuro">
+                <i id="theme-icon" class="fa-solid fa-moon"></i>
+            </button>
+            <a href="#pesquisa" class="btn btn-green"><i class="fa-regular fa-user"></i> PARTICIPE</a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-subtitle">JUNTOS POR UMA</span>
+            <h1 class="hero-title">CAÇADOR <br> <span class="highlight-badge">MAIS ACESSÍVEL</span></h1>
+            <p class="hero-description">O Plano Habitar Caçador tem como missão facilitar o acesso à moradia digna e economicamente viável para todos os caçadorenses.</p>
+            <div class="hero-buttons">
+                <a href="#panorama" class="btn btn-blue">CONHEÇA O PROJETO &rarr;</a>
+                <a href="#simulador" class="btn btn-outline">COMO FUNCIONA &or;</a>
+            </div>
+            <a href="#" id="resumo-trigger" class="card-link resumo-link"><i class="fa-solid fa-bolt"></i> Ou veja o resumo em 30 segundos &rarr;</a>
+        </div>
+    </section>
+
+    <!-- MODAL: RESUMO EM 30 SEGUNDOS -->
+    <div id="resumo-modal" class="modal-overlay" hidden>
+        <div class="modal-box">
+            <button type="button" class="modal-close" id="resumo-close" aria-label="Fechar">&times;</button>
+            <span class="section-tag">RESUMO RÁPIDO</span>
+            <h3>Plano Habitar Caçador em 30 segundos</h3>
+            <ul class="modal-list">
+                <li><i class="fa-solid fa-bullseye"></i><span>Facilitar o acesso à moradia digna e economicamente viável em Caçador.</span></li>
+                <li><i class="fa-solid fa-users"></i><span>Feito para moradores com dificuldade de aluguel acessível e estudantes vindos de outras cidades.</span></li>
+                <li><i class="fa-solid fa-toolbox"></i><span>Reúne diagnóstico da cidade, simulador de aluguel, pesquisa de demanda, soluções construtivas acessíveis e guia de direitos do inquilino.</span></li>
+                <li><i class="fa-solid fa-circle-xmark"></i><span>Não é uma imobiliária: não há anúncios, compra ou venda de imóveis pela plataforma.</span></li>
+            </ul>
+            <a href="#pesquisa" class="btn btn-green" id="resumo-cta">PARTICIPAR DA PESQUISA &rarr;</a>
+        </div>
+    </div>
+
+    <!-- PANORAMA HABITACIONAL -->
+    <section class="panorama" id="panorama">
+
+        <!-- TÍTULO NO TOPO -->
+        <div class="panorama-header">
+            <span class="section-tag">PANORAMA LOCAL</span>
+            <h2>PANORAMA HABITACIONAL DE CAÇADOR</h2>
+            <p>Entenda o impacto do alto custo dos imóveis para moradores, estudantes e para o desenvolvimento sustentável da nossa cidade.</p>
+        </div>
+
+        <!-- CARDS DIVIDIDOS EM 4 COLUNAS -->
+        <div class="cards-container">
+            <div class="card">
+                <div class="card-icon blue"><i class="fa-solid fa-house-crack"></i></div>
+                <h4>Alto Custo dos Imóveis</h4>
+                <p>Os valores de aluguel e compra estão acima da média regional, dificultando o acesso à moradia digna para muitas famílias e estudantes.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon green"><i class="fa-solid fa-users"></i></div>
+                <h4>Impacto Social</h4>
+                <p>Jovens e trabalhadores enfrentam dificuldades para se manter na cidade, afetando qualidade de vida e oportunidades locais.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon yellow"><i class="fa-solid fa-industry"></i></div>
+                <h4>Impacto nas Indústrias</h4>
+                <p>A dificuldade de moradia afeta a atração e retenção de talentos, impactando diretamente no crescimento das empresas locais.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon dark-blue"><i class="fa-solid fa-chart-line"></i></div>
+                <h4>Desenvolvimento da Cidade</h4>
+                <p>Investir em habitação acessível é investir no futuro de Caçador, promovendo uma cidade mais justa e próspera.</p>
+            </div>
+        </div>
+
+        <!-- BARRA AZUL DE ESTATÍSTICAS NA PARTE INFERIOR -->
+        <div class="stats-panel-horizontal">
+            <div class="stat-item">
+                <div class="stat-header">
+                    <i class="fa-solid fa-house-chimney-window stat-icon"></i>
+                    <span class="stat-value" data-count-to="70" data-prefix="+" data-suffix="%">+0%</span>
+                </div>
+                <p class="stat-desc">Aumento no preço dos imóveis nos últimos 5 anos</p>
+            </div>
+
+            <div class="stat-divider"></div>
+
+            <div class="stat-item">
+                <div class="stat-header">
+                    <i class="fa-solid fa-users stat-icon"></i>
+                    <span class="stat-value" data-count-to="30" data-suffix="%">0%</span>
+                </div>
+                <p class="stat-desc">Da renda média familiar comprometida com aluguel</p>
+            </div>
+
+            <div class="stat-divider"></div>
+
+            <div class="stat-item">
+                <div class="stat-header">
+                    <i class="fa-solid fa-graduation-cap stat-icon"></i>
+                    <span class="stat-value" data-count-to="1200" data-prefix="+" data-format="pt-BR">+0</span>
+                </div>
+                <p class="stat-desc">Estudantes de outras cidades buscando moradia</p>
+            </div>
+
+            <div class="stat-divider"></div>
+
+            <div class="stat-item">
+                <div class="stat-header">
+                    <i class="fa-solid fa-city stat-icon"></i>
+                    <span class="stat-value">Impacto direto</span>
+                </div>
+                <p class="stat-desc">Na competitividade e atração de indústrias locais</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- DADOS OFICIAIS: IBGE (API PÚBLICA, AO VIVO) -->
+    <section class="panorama" id="dados-ibge">
+        <div class="panorama-header">
+            <span class="section-tag">DADOS ABERTOS</span>
+            <h2>CAÇADOR EM NÚMEROS</h2>
+            <p>Dados oficiais, buscados automaticamente da API pública do IBGE no momento em que você abriu esta página.</p>
+        </div>
+
+        <p id="ibge-loading" class="ibge-status"><i class="fa-solid fa-spinner fa-spin"></i> Carregando dados do IBGE...</p>
+        <p id="ibge-erro" class="ibge-status" hidden><i class="fa-solid fa-triangle-exclamation"></i> Não foi possível carregar os dados do IBGE agora. Tente novamente mais tarde.</p>
+
+        <div id="ibge-painel" class="cards-container" hidden>
+            <div class="card">
+                <div class="card-icon green"><i class="fa-solid fa-people-group"></i></div>
+                <h4>População Estimada (2025)</h4>
+                <p class="ibge-valor" id="ibge-pop-2025">—</p>
+            </div>
+            <div class="card">
+                <div class="card-icon blue"><i class="fa-solid fa-arrow-trend-up"></i></div>
+                <h4>Crescimento desde o Censo 2022</h4>
+                <p class="ibge-valor" id="ibge-crescimento">—</p>
+            </div>
+            <div class="card">
+                <div class="card-icon yellow"><i class="fa-solid fa-map"></i></div>
+                <h4>Área Territorial</h4>
+                <p class="ibge-valor" id="ibge-area">—</p>
+            </div>
+            <div class="card">
+                <div class="card-icon dark-blue"><i class="fa-solid fa-layer-group"></i></div>
+                <h4>Densidade Demográfica</h4>
+                <p class="ibge-valor" id="ibge-densidade">—</p>
+            </div>
+        </div>
+
+        <p class="map-caption">Fonte: IBGE — Estimativas da População (2025) e Censo Demográfico (2022), via API pública <code>servicodados.ibge.gov.br</code>. <a href="https://cidades.ibge.gov.br/brasil/sc/cacador/panorama" target="_blank" rel="noopener noreferrer">Ver painel completo do IBGE &rarr;</a></p>
+    </section>
+
+    <!-- MAPA INTERATIVO DE CAÇADOR -->
+    <section class="map-section" id="mapa">
+        <div class="panorama-header">
+            <span class="section-tag">GEOGRAFIA LOCAL</span>
+            <h2>MAPA DOS BAIRROS DE CAÇADOR</h2>
+            <p>Explore os bairros do município considerados no diagnóstico habitacional do plano. Clique em um marcador para participar da pesquisa a partir da sua região.</p>
+        </div>
+        <div class="map-wrapper">
+            <div id="map"></div>
+            <div class="map-legend">
+                <span class="legend-item"><i class="fa-solid fa-circle" style="color:#008744;"></i> Zona Central (até 1,3 km do Centro)</span>
+                <span class="legend-item"><i class="fa-solid fa-circle" style="color:#2563EB;"></i> Zona Intermediária (1,3 a 2,15 km)</span>
+                <span class="legend-item"><i class="fa-solid fa-circle" style="color:#CA8A04;"></i> Zona Periférica (acima de 2,15 km)</span>
+            </div>
+            <p class="map-caption">Mapa construído com dados geográficos abertos do OpenStreetMap. Zonas calculadas pela distância real de cada bairro até o Centro; não representam índices de déficit habitacional.</p>
+        </div>
+    </section>
+
+    <!-- SIMULADOR DE ALUGUEL SAUDÁVEL -->
+    <section class="simulator-section" id="simulador">
+        <div class="simulator-container">
+            <div class="simulator-text">
+                <h2>Simulador de Aluguel Saudável</h2>
+                <p>Especialistas recomendam que seus gastos com moradia não ultrapassem <strong>30% da sua renda mensal</strong>. Descubra qual deveria ser o seu teto de aluguel ideal em Caçador.</p>
+            </div>
+            <div class="simulator-box">
+                <label for="renda">Sua Renda Mensal (R$):</label>
+                <input type="number" id="renda" placeholder="Ex: 3000" min="0" max="100000" oninput="calcularAluguel()">
+                <div class="resultado-box">
+                    <span>Teto Recomendado:</span>
+                    <h3 id="resultado">R$ 0,00</h3>
+                </div>
+                <button type="button" id="relatorio-trigger" class="btn btn-blue" style="justify-content: center;">VER MEU RELATÓRIO COMPLETO &rarr;</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- MODAL: RELATÓRIO PERSONALIZADO -->
+    <div id="relatorio-modal" class="modal-overlay" hidden>
+        <div class="modal-box">
+            <button type="button" class="modal-close" id="relatorio-close" aria-label="Fechar">&times;</button>
+            <span class="section-tag">SEU RELATÓRIO</span>
+            <h3>Relatório Personalizado</h3>
+            <ul class="modal-list">
+                <li><i class="fa-solid fa-sack-dollar"></i><span>Com renda de <strong id="relatorio-renda">R$ 0,00</strong>, seu teto de aluguel recomendado é <strong id="relatorio-teto">R$ 0,00</strong>.</span></li>
+                <li><i class="fa-solid fa-house-chimney"></i><span>Solução construtiva sugerida: <strong id="relatorio-solucao">—</strong>.</span></li>
+                <li><i class="fa-solid fa-circle-info"></i><span id="relatorio-motivo"></span></li>
+            </ul>
+            <p class="compare-caption" style="margin: 0 0 20px;">Sugestão ilustrativa com base no seu perfil de renda — não substitui um orçamento real com uma construtora parceira.</p>
+            <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                <a href="servicos.html" class="btn btn-green" style="flex: 1; justify-content: center;">VER SOLUÇÕES &rarr;</a>
+                <button type="button" id="relatorio-compartilhar" class="btn btn-outline" style="flex: 1; justify-content: center;"><i class="fa-solid fa-share-nodes"></i> COMPARTILHAR</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA & PESQUISA -->
+    <section class="cta-section" id="pesquisa">
+        <div class="cta-box">
+            <div class="cta-icon">
+                <i class="fa-solid fa-house-chimney-window"></i>
+                <i class="fa-solid fa-heart heart-icon"></i>
+            </div>
+            <div class="cta-content">
+                <h2>Faça parte da mudança!</h2>
+                <p>Sua participação é fundamental para construirmos juntos soluções reais para o desafio da moradia em Caçador.</p>
+            </div>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSewV85OoJQ3cArlmn6vn6lVAgEoa7BUQ8nGz9EV23yz-bv1gg/viewform?usp=publish-editor" target="_blank" class="btn btn-yellow-dark">PARTICIPE DA PESQUISA &rarr;</a>
+        </div>
+
+        <div class="trust-icons">
+            <div class="trust-item">
+                <i class="fa-solid fa-shield-halved"></i>
+                <span>Informação<br>confiável</span>
+            </div>
+            <div class="trust-item">
+                <i class="fa-solid fa-leaf"></i>
+                <span>Soluções<br>sustentáveis</span>
+            </div>
+            <div class="trust-item">
+                <i class="fa-solid fa-handshake"></i>
+                <span>Parcerias que<br>transformam</span>
+            </div>
+            <div class="trust-item">
+                <i class="fa-solid fa-users-rays"></i>
+                <span>Cidade mais<br>justa e próspera</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- RODAPÉ -->
+    <footer>
+        <div class="footer-logo">
+            <a href="index.html" class="footer-brand">
+                <img src="brasaocacador.jpg" alt="Brasão do Município de Caçador" class="logo-brasao">
+                <div class="logo-text">
+                    <h2>PLANO<span>HABITAR</span><strong>CAÇADOR</strong></h2>
+                </div>
+            </a>
+            <div class="footer-slogan">
+                Moradia digna é um direito.<br>
+                Juntos, podemos tornar Caçador<br>
+                uma cidade para todos.
+            </div>
+        </div>
+
+        <div class="footer-social">
+            <p>Siga-nos nas redes sociais</p>
+            <div class="social-icons">
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                <a href="#"><i class="fa-regular fa-envelope"></i></a>
+            </div>
+        </div>
+
+        <div class="footer-location">
+            <strong>Caçador, SC</strong><br>
+            Terra de oportunidades.<br>
+            Cidade de, para e por pessoas.
+        </div>
+
+        <div class="footer-credit">
+            Plano Habitar Caçador &mdash; Desenvolvido por Rafael Matheus Leismann e Vinicius Corrêa
+        </div>
+    </footer>
+
+    <!-- Leaflet (Mapa Interativo) -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <!-- SCRIPTS -->
+    <script src="scripts.js"></script>
+    <script>
+        // 1. Lógica do Simulador de Aluguel
+        const RENDA_MAXIMA = 100000;
+
+        function calcularAluguel() {
+            let renda = document.getElementById('renda').value;
+            let resultado = document.getElementById('resultado');
+
+            if (renda > 0 && renda <= RENDA_MAXIMA) {
+                let teto = (renda * 0.30).toFixed(2);
+                let formatoBRL = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(teto);
+                resultado.innerText = formatoBRL;
+                resultado.style.color = "#008744";
+            } else if (renda > RENDA_MAXIMA) {
+                resultado.innerText = "Confira o valor digitado";
+                resultado.style.color = "#CA8A04";
+            } else {
+                resultado.innerText = "R$ 0,00";
+                resultado.style.color = document.body.classList.contains('dark-mode') ? "#F8FAFC" : "#1E293B";
+            }
+        }
+
+        // 2. Relatório Personalizado (Simulador + Soluções Construtivas)
+        function sugerirSolucao(renda) {
+            if (renda < 2000) {
+                return { nome: 'Habitação Modular Popular', motivo: 'menor investimento inicial e obra rápida, considerando o perfil de renda informado.' };
+            } else if (renda < 4000) {
+                return { nome: 'Steel Frame', motivo: 'bom equilíbrio entre custo e prazo de obra, considerando o perfil de renda informado.' };
+            }
+            return { nome: 'Madeira Engenheirada (CLT)', motivo: 'melhor isolamento térmico e sustentabilidade, considerando o perfil de renda informado.' };
+        }
+
+        const relatorioTrigger = document.getElementById('relatorio-trigger');
+        const relatorioModal = document.getElementById('relatorio-modal');
+        const relatorioClose = document.getElementById('relatorio-close');
+        const relatorioCompartilhar = document.getElementById('relatorio-compartilhar');
+        const formatoBRLCompleto = valor => new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(valor);
+
+        function gerarRelatorio(renda) {
+            const teto = renda * 0.30;
+            const solucao = sugerirSolucao(renda);
+            document.getElementById('relatorio-renda').textContent = formatoBRLCompleto(renda);
+            document.getElementById('relatorio-teto').textContent = formatoBRLCompleto(teto);
+            document.getElementById('relatorio-solucao').textContent = solucao.nome;
+            document.getElementById('relatorio-motivo').textContent = `Essa opção tende a ter ${solucao.motivo}`;
+        }
+
+        function abrirRelatorio() {
+            const renda = parseFloat(document.getElementById('renda').value);
+            if (!renda || renda <= 0) {
+                mostrarToast('Preencha sua renda mensal primeiro.', 'fa-solid fa-triangle-exclamation');
+                document.getElementById('renda').focus();
+                return;
+            }
+            if (renda > RENDA_MAXIMA) {
+                mostrarToast('Confira o valor da renda informado — parece muito alto.', 'fa-solid fa-triangle-exclamation');
+                document.getElementById('renda').focus();
+                return;
+            }
+            gerarRelatorio(renda);
+            relatorioModal.hidden = false;
+            document.body.style.overflow = 'hidden';
+        }
+
+        function fecharRelatorio() {
+            relatorioModal.hidden = true;
+            document.body.style.overflow = '';
+        }
+
+        relatorioTrigger?.addEventListener('click', abrirRelatorio);
+        relatorioClose?.addEventListener('click', fecharRelatorio);
+        relatorioModal?.addEventListener('click', (e) => { if (e.target === relatorioModal) fecharRelatorio(); });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && relatorioModal && !relatorioModal.hidden) fecharRelatorio();
+        });
+
+        relatorioCompartilhar?.addEventListener('click', () => {
+            const renda = document.getElementById('renda').value;
+            const url = `${location.origin}${location.pathname}?renda=${renda}#simulador`;
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(url)
+                    .then(() => mostrarToast('Link do seu relatório copiado!', 'fa-solid fa-link'))
+                    .catch(() => mostrarToast('Não foi possível copiar o link.', 'fa-solid fa-triangle-exclamation'));
+            }
+        });
+
+        // Deep link: ?renda=3000 pré-preenche o simulador e já abre o relatório
+        const parametroRenda = new URLSearchParams(location.search).get('renda');
+        if (parametroRenda && parseFloat(parametroRenda) > 0) {
+            document.getElementById('renda').value = parametroRenda;
+            calcularAluguel();
+            abrirRelatorio();
+        }
+
+        // 3. Dados Oficiais do IBGE (API pública, buscados ao vivo)
+        (async function carregarDadosIBGE() {
+            const loading = document.getElementById('ibge-loading');
+            const erro = document.getElementById('ibge-erro');
+            const painel = document.getElementById('ibge-painel');
+            if (!painel) return;
+
+            const CODIGO_MUNICIPIO = 4203006; // Caçador, SC (IBGE)
+            const localidade = encodeURIComponent(`N6[${CODIGO_MUNICIPIO}]`);
+            const BASE = 'https://servicodados.ibge.gov.br/api/v3/agregados';
+
+            const extrairValor = (resposta) => {
+                const serie = resposta[0].resultados[0].series[0].serie;
+                const chave = Object.keys(serie)[0];
+                return parseFloat(serie[chave]);
+            };
+
+            try {
+                const [popEstimadaResp, popCensoResp, areaResp] = await Promise.all([
+                    fetch(`${BASE}/6579/periodos/-1/variaveis/9324?localidades=${localidade}`).then(r => r.json()),
+                    fetch(`${BASE}/9514/periodos/-1/variaveis/93?localidades=${localidade}`).then(r => r.json()),
+                    fetch(`${BASE}/1301/periodos/-1/variaveis/615?localidades=${localidade}`).then(r => r.json())
+                ]);
+
+                const pop2025 = extrairValor(popEstimadaResp);
+                const pop2022 = extrairValor(popCensoResp);
+                const areaKm2 = extrairValor(areaResp);
+                const crescimento = pop2025 - pop2022;
+                const percentual = ((crescimento / pop2022) * 100).toFixed(1);
+                const densidade = (pop2025 / areaKm2).toFixed(1);
+
+                document.getElementById('ibge-pop-2025').textContent = pop2025.toLocaleString('pt-BR') + ' habitantes';
+                document.getElementById('ibge-crescimento').textContent = `+${crescimento.toLocaleString('pt-BR')} pessoas (${percentual}%)`;
+                document.getElementById('ibge-area').textContent = areaKm2.toLocaleString('pt-BR') + ' km²';
+                document.getElementById('ibge-densidade').textContent = densidade.toLocaleString('pt-BR') + ' hab/km²';
+
+                loading.hidden = true;
+                painel.hidden = false;
+            } catch (err) {
+                loading.hidden = true;
+                erro.hidden = false;
+            }
+        })();
+
+        // 4. Mapa Interativo dos Bairros de Caçador
+        // Coordenadas obtidas via OpenStreetMap (dados abertos, licença ODbL)
+        const bairrosCacador = [
+            { nome: "Centro", lat: -26.7754026, lon: -51.0107041 },
+            { nome: "Municípios", lat: -26.7724654, lon: -51.0318123 },
+            { nome: "Santa Catarina", lat: -26.7595718, lon: -51.0187963 },
+            { nome: "Paraíso", lat: -26.7841072, lon: -51.0179869 },
+            { nome: "Bom Jesus", lat: -26.7792694, lon: -51.0272765 },
+            { nome: "Figueroa", lat: -26.7894272, lon: -51.0245568 },
+            { nome: "Sorgatto", lat: -26.7839579, lon: -51.0291891 },
+            { nome: "Reunidas", lat: -26.7721213, lon: -51.0229245 },
+            { nome: "DER", lat: -26.7690652, lon: -51.0200610 },
+            { nome: "Champagnat", lat: -26.7787368, lon: -51.0462260 },
+            { nome: "Kurtz", lat: -26.7690486, lon: -51.0078016 },
+            { nome: "Berger", lat: -26.7866670, lon: -51.0093479 },
+            { nome: "Gioppo", lat: -26.7713224, lon: -50.9999959 },
+            { nome: "Nossa Senhora da Salete", lat: -26.7626236, lon: -51.0050833 },
+            { nome: "Bello", lat: -26.7797077, lon: -50.9975685 },
+            { nome: "Alto Bonito", lat: -26.7867850, lon: -50.9994455 },
+            { nome: "Vila Usina", lat: -26.8005106, lon: -51.0076359 },
+            { nome: "Bom Sucesso", lat: -26.8024656, lon: -51.0043172 },
+            { nome: "Martello", lat: -26.7914363, lon: -50.9893845 },
+            { nome: "Rancho Fundo", lat: -26.7777925, lon: -50.9834380 },
+            { nome: "São Cristóvão", lat: -26.7826526, lon: -50.9778951 },
+            { nome: "Industrial", lat: -26.7842255, lon: -50.9620122 },
+            { nome: "Aeroporto", lat: -26.7810444, lon: -50.9606887 },
+            { nome: "Adolfo Konder", lat: -26.7356296, lon: -51.0363793 }
+        ];
+
+        const map = L.map('map', { scrollWheelZoom: false }).setView([-26.7754, -51.0107], 13);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 18,
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        // Distância real (Haversine) de cada bairro até o Centro (-26.7754026, -51.0107041)
+        const CENTRO = { lat: -26.7754026, lon: -51.0107041 };
+        function distanciaKm(lat1, lon1, lat2, lon2) {
+            const R = 6371;
+            const toRad = deg => deg * Math.PI / 180;
+            const dLat = toRad(lat2 - lat1);
+            const dLon = toRad(lon2 - lon1);
+            const a = Math.sin(dLat / 2) ** 2 +
+                      Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) * Math.sin(dLon / 2) ** 2;
+            return R * 2 * Math.asin(Math.sqrt(a));
+        }
+
+        const zonas = {
+            central: { cor: '#008744', label: 'Zona Central' },
+            intermediaria: { cor: '#2563EB', label: 'Zona Intermediária' },
+            periferica: { cor: '#CA8A04', label: 'Zona Periférica' }
+        };
+
+        function classificarZona(distancia) {
+            if (distancia <= 1.3) return 'central';
+            if (distancia <= 2.15) return 'intermediaria';
+            return 'periferica';
+        }
+
+        // Compartilhar bairro: gera link direto (?bairro=slug#mapa) e copia para a área de transferência
+        function slugify(texto) {
+            return texto.normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+                .toLowerCase().trim().replace(/\s+/g, '-');
+        }
+
+        const marcadoresPorSlug = {};
+
+        bairrosCacador.forEach(bairro => {
+            const distancia = distanciaKm(CENTRO.lat, CENTRO.lon, bairro.lat, bairro.lon);
+            const zonaKey = classificarZona(distancia);
+            const zona = zonas[zonaKey];
+            const slug = slugify(bairro.nome);
+
+            const icon = L.divIcon({
+                className: 'bairro-marker',
+                html: `<i class="fa-solid fa-location-dot" style="color:${zona.cor}; font-size:26px; text-shadow:0 2px 4px rgba(0,0,0,0.3);"></i>`,
+                iconSize: [26, 26],
+                iconAnchor: [13, 24],
+                popupAnchor: [0, -22]
+            });
+
+            const marker = L.marker([bairro.lat, bairro.lon], { icon: icon })
+                .addTo(map)
+                .bindPopup(
+                    `<div class="map-popup">
+                        <strong>Bairro ${bairro.nome}</strong>
+                        ${zona.label} &middot; ~${distancia.toFixed(1)} km do Centro
+                        <br>Mora aqui ou conhece a região?
+                        <a href="#pesquisa">Participe da pesquisa &rarr;</a>
+                        <button type="button" class="popup-share-btn" data-slug="${slug}"><i class="fa-solid fa-share-nodes"></i> Compartilhar</button>
+                    </div>`
+                );
+
+            marcadoresPorSlug[slug] = { marker, bairro };
+        });
+
+        map.getContainer().addEventListener('click', (e) => {
+            const btn = e.target.closest('.popup-share-btn');
+            if (!btn) return;
+            const slug = btn.dataset.slug;
+            const url = `${location.origin}${location.pathname}?bairro=${slug}#mapa`;
+
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(url)
+                    .then(() => mostrarToast('Link do bairro copiado!', 'fa-solid fa-link'))
+                    .catch(() => mostrarToast('Não foi possível copiar o link.', 'fa-solid fa-triangle-exclamation'));
+            }
+        });
+
+        // Deep link: abre direto o bairro indicado em ?bairro=slug
+        const parametroBairro = new URLSearchParams(location.search).get('bairro');
+        if (parametroBairro && marcadoresPorSlug[parametroBairro]) {
+            const alvo = marcadoresPorSlug[parametroBairro];
+            map.setView([alvo.bairro.lat, alvo.bairro.lon], 16);
+            alvo.marker.openPopup();
+        }
+    </script>
+</body>
+</html>
