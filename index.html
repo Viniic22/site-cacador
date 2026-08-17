@@ -208,6 +208,7 @@
             <p>Explore os bairros do município considerados no diagnóstico habitacional do plano. Clique em um marcador para participar da pesquisa a partir da sua região.</p>
         </div>
         <div class="map-wrapper">
+            <button type="button" id="geo-trigger" class="btn btn-outline geo-btn"><i class="fa-solid fa-location-crosshairs"></i> VER MINHA LOCALIZAÇÃO NO MAPA</button>
             <div id="map"></div>
             <div class="map-legend">
                 <span class="legend-item"><i class="fa-solid fa-circle" style="color:#008744;"></i> Zona Central (até 1,3 km do Centro)</span>
@@ -586,6 +587,74 @@
             const alvo = marcadoresPorSlug[parametroBairro];
             map.setView([alvo.bairro.lat, alvo.bairro.lon], 16);
             alvo.marker.openPopup();
+        }
+
+        // 5. "Ver minha localização" — geolocalização do navegador
+        const geoTrigger = document.getElementById('geo-trigger');
+        let geoMarker = null;
+
+        geoTrigger?.addEventListener('click', () => {
+            if (!navigator.geolocation) {
+                mostrarToast('Seu navegador não suporta geolocalização.', 'fa-solid fa-triangle-exclamation');
+                return;
+            }
+
+            geoTrigger.classList.add('loading');
+            geoTrigger.innerHTML = '<i class="fa-solid fa-spinner"></i> LOCALIZANDO...';
+
+            navigator.geolocation.getCurrentPosition(
+                (pos) => {
+                    resetarBotaoGeo();
+                    const userLat = pos.coords.latitude;
+                    const userLon = pos.coords.longitude;
+                    const distanciaAteCentro = distanciaKm(CENTRO.lat, CENTRO.lon, userLat, userLon);
+
+                    const iconUsuario = L.divIcon({
+                        className: 'geo-marker',
+                        html: '<div class="geo-marker-dot"></div>',
+                        iconSize: [18, 18],
+                        iconAnchor: [9, 9]
+                    });
+
+                    if (geoMarker) map.removeLayer(geoMarker);
+                    geoMarker = L.marker([userLat, userLon], { icon: iconUsuario }).addTo(map);
+
+                    if (distanciaAteCentro <= 15) {
+                        // Está em Caçador (ou bem perto): identifica o bairro mais próximo
+                        let maisProximo = null;
+                        let menorDistancia = Infinity;
+                        bairrosCacador.forEach(bairro => {
+                            const d = distanciaKm(userLat, userLon, bairro.lat, bairro.lon);
+                            if (d < menorDistancia) {
+                                menorDistancia = d;
+                                maisProximo = bairro;
+                            }
+                        });
+
+                        geoMarker.bindPopup(
+                            `<div class="map-popup"><strong>Você está aqui</strong>Bairro mais próximo: <strong>${maisProximo.nome}</strong> (~${menorDistancia.toFixed(1)} km)</div>`
+                        ).openPopup();
+                        map.setView([userLat, userLon], 15);
+                        mostrarToast(`Você está perto do bairro ${maisProximo.nome}!`, 'fa-solid fa-location-crosshairs');
+                    } else {
+                        // Está longe de Caçador: mostra a distância até a cidade
+                        geoMarker.bindPopup(
+                            `<div class="map-popup"><strong>Você está aqui</strong>A ${distanciaAteCentro.toFixed(0)} km de Caçador</div>`
+                        ).openPopup();
+                        mostrarToast(`Você está a ${distanciaAteCentro.toFixed(0)} km de Caçador.`, 'fa-solid fa-location-crosshairs');
+                    }
+                },
+                (err) => {
+                    resetarBotaoGeo();
+                    mostrarToast('Não foi possível obter sua localização.', 'fa-solid fa-triangle-exclamation');
+                },
+                { timeout: 8000 }
+            );
+        });
+
+        function resetarBotaoGeo() {
+            geoTrigger.classList.remove('loading');
+            geoTrigger.innerHTML = '<i class="fa-solid fa-location-crosshairs"></i> VER MINHA LOCALIZAÇÃO NO MAPA';
         }
     </script>
 </body>
